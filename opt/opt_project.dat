@@ -1,0 +1,10 @@
+# opt_prpject.dat
+#
+# Written by Will Cameron, Tyler White, Sulin Phee 2018
+#
+# This file contains data for the linear programming model
+# used to determine Kemito Pipfruits most effective distrubution plan
+#
+# Created: 25/07/2018
+
+param market_supply := 
