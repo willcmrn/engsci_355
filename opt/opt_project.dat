@@ -7,20 +7,37 @@
 #
 # Created: 25/07/2018
 
-param avo_supply := 
-VS1	531
-VS2	285
-VS3	983
-VS4	264
+set TYPES		:= AVO APP ;
+set AVO_SUPPLY 	:= VS1 VS2 VS3 VS4 ;
+set AVO_DEMAND 	:= VD1 VD2 VD3 VD4 VD5 ;
+set APP_SUPPLY 	:= AS1 AS2 AS3 AS4 AS5 AS6 AS7 AS8 AS9 AS10 ;
+set APP_DEMAND 	:= AD1 AD2 AD3 AD4 AD5 AD6 AD7 AD8 AD9 AD10 AD11 AD12 AD13 AD14 AD15 ;
+set PACKHOUSE 	:= T1 T2 T3 T4 ;
+set SIZE 		:= S M L ;
+set PERIOD		:= 1..10 ;
+
+
+
+# --- Avocado S & D ---
+
+param 	avo_supply := 
+VS1		531
+VS2		285
+VS3		983
+VS4		264
+;
 
 param avo_demand:
-	1		2		3		4		5		6		7		8		9		10 :=
-VD1	6		1953	1976	262		1101	145		10		109		335		719
-VD2	1609	12		58		131		407		1159	306		98		1240	224
-VD3	326		77		8		524		67		160		1665	106		58		1077
-VD4	85		9		7		765		64		180		5		1439	70		20
-VD5	35		9		13		173		216		210		74		102		152		20
+		1		2		3		4		5		6		7		8		9		10 :=
+VD1		6		1953	1976	262		1101	145		10		109		335		719
+VD2		1609	12		58		131		407		1159	306		98		1240	224
+VD3		326		77		8		524		67		160		1665	106		58		1077
+VD4		85		9		7		765		64		180		5		1439	70		20
+VD5		35		9		13		173		216		210		74		102		152		20
+;
 
+
+# --- Apple S & D ---
 
 param app_supply := 
 AS1 	69
@@ -33,6 +50,7 @@ AS7		364
 AS8		968
 AS9		594
 AS10	14
+;
 
 param app_demand:
 		1		2		3		4		5		6		7		8		9		10 :=
@@ -51,7 +69,61 @@ AD12	195		351		121		467		32		2		4		11		100		55
 AD13	1570	12		97		336		655		5		16		14		104		304
 AD14	16		2846	60		77		30		2		14		52		100		80
 AD15	155		249		93		66		29		76		2488	36		350		289
+;
 
-param pakcing:
+
+# --- Machine rates & costs ---
+
+param: 	packrate	packcost :=
+S 		100			10
+M 		375			25
+L 		500			35
+;
+
+
+# --- Transportation costs ---
+
+param avo_costs:
+		T1	T2	T3	T4 :=
+VS1		21	84	42	93
+VS2		38	61	5	51
+VS3		67	9	74	89
+VS4		48	4	11	18
+VD1		77	73	16	64
+VD2		97	33	40	91
+VD3		60	66	14	90
+VD4		96	46	63	44
+VD5		44	97	52	70
+;
+
+
+param app_costs:
+		T1	T2	T3	T4 :=
+AS1		65	34	44	38
+AS2		3	35	79	35
+AS3		68	10	3	32
+AS4		80	90	80	2
+AS5		73	98	36	9
+AS6		80	56	47	48
+AS7		20	63	72	67
+AS8		87	47	72	20
+AS9		24	68	83	1
+AS10	32	20	96	36
+AD1		93	51	99	41
+AD2		66	92	71	46
+AD3		42	90	10	53
+AD4		19	57	64	29
+AD5		58	15	2	59
+AD6		24	87	83	1
+AD7		59	72	29	61
+AD8		97	99	48	29
+AD9		22	78	39	57
+AD10	84	20	68	19
+AD11	51	8	39	83
+AD12	2	14	99	38
+AD13	85	14	6	48
+AD14	7	93	1	71
+AD15	92	40	79	75
+;
 
 
