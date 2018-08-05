@@ -1,0 +1,45 @@
+# opt_prpject.run
+#
+# Written by Will Cameron, Tyler White, Sulin Phee 2018
+#
+# This file is the run file for the linear programming model
+# used to determine Kemito Pipfruits most effective distrubution plan
+#
+# Created: 05/08/2018
+
+reset;
+
+# --- Model & data ---
+
+model opt_project.mod;
+
+data opt_project.dat;
+
+
+
+# --- Supply check ---
+
+# Make sure the demand can be satisfied
+# CLAUSE HERE
+
+
+# --- Solve ---
+
+#option presolve 0;
+option solver cplex;
+option cplex_options (
+#  'varselect -1' &
+#  'probe -1 ' &
+#  'presolve 0 ' &
+#  'mipdisplay 2 mipinterval 1 ' &
+#  'mipcuts -1' &
+#  'rinsheur -1 ' &
+#  'heurfreq -1' &
+#  'repairtries -1' &
+  '');
+solve;
+
+
+# --- Results ---
+
+display #VARIABLE HERE
