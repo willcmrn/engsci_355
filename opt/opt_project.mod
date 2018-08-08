@@ -11,7 +11,6 @@ model;
 
 # --- Sets ---
 # ENTER HERE
-# THIS IS A TEST
 
 
 # --- Params ---
