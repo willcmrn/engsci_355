@@ -7,14 +7,14 @@
 #
 # Created: 25/07/2018
 
-set TYPES		:= AVO APP ;
+set TYPE		:= AVO APP ;
 set AVO_S 		:= VS1 VS2 VS3 VS4 ;
 set AVO_D 		:= VD1 VD2 VD3 VD4 VD5 ;
 set APP_S 		:= AS1 AS2 AS3 AS4 AS5 AS6 AS7 AS8 AS9 AS10 ;
 set APP_D 		:= AD1 AD2 AD3 AD4 AD5 AD6 AD7 AD8 AD9 AD10 AD11 AD12 AD13 AD14 AD15 ;
 set PACKHOUSE 	:= T1 T2 T3 T4 ;
 set SIZE 		:= S M L ;
-set PERIOD		:= 1..10 ;
+set PERIOD		:= 1 2 3 4 5 6 7 8 9 10 ;
 
 
 
