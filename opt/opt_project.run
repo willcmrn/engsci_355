@@ -22,25 +22,15 @@ data opt_project.dat;
 # Make sure the demand can be satisfied
 # CLAUSE HERE
 
-
+s
 # --- Solve ---
 
 #option presolve 0;
-option solver cplex;
-option cplex_options (
-#  'varselect -1' &
-#  'probe -1 ' &
-#  'presolve 0 ' &
-#  'mipdisplay 2 mipinterval 1 ' &
-#  'mipcuts -1' &
-#  'rinsheur -1 ' &
-#  'heurfreq -1' &
-#  'repairtries -1' &
-  '');
+option solver gurobi;
 solve;
 
 
 # --- Results ---
 
-display flows
-display build
+display flow;
+display build;
