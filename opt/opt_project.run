@@ -22,7 +22,7 @@ data opt_project.dat;
 # Make sure the demand can be satisfied
 # CLAUSE HERE
 
-s
+
 # --- Solve ---
 
 #option presolve 0;
