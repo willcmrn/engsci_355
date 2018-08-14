@@ -12,15 +12,14 @@ reset;
 # --- Model & data ---
 
 model opt_project.mod;
+#model opt_project_V2.mod;
 
 data opt_project.dat;
 
 
 
 # --- Supply check ---
-
-# Make sure the demand can be satisfied
-# CLAUSE HERE
+# This was not required as supply always exceeds demand
 
 
 # --- Solve ---
@@ -32,5 +31,9 @@ solve;
 
 # --- Results ---
 
-display flow;
+display {l in PERIOD}:
+	{i in AVO_NODES, j in PACKHOUSE}(flow[i,j,'AVO',l]);
+display {l in PERIOD}:
+	{i in APP_NODES, j in PACKHOUSE}(flow[i,j,'APP',l]);
+display sum{i in SIZE, j in PACKHOUSE, k in TYPE} packcost[i]*1000*build[i,j,k];
 display build;

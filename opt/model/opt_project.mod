@@ -102,13 +102,12 @@ subject to apple_demand_limit {i in APP_D, l in PERIOD}:
 # Conservation of flows
 
 # Avocado supply
-subject to avocado_process_limit {i in AVO_S, l in PERIOD}:
-  sum {j in PACKHOUSE} flow[i,j,'AVO',l] = avo_supply[i];
+subject to avocado_process_limit {j in PACKHOUSE, l in PERIOD}:
+  sum {i in AVO_S} flow[i,j,'AVO',l] - sum {m in AVO_D} flow[m,j,'AVO',l] = 0;
 
 # Apple supply
-subject to apple_process_limit {i in APP_S, l in PERIOD}:
-  sum {j in PACKHOUSE} flow[i,j,'APP',l] = app_supply[i];
-
+subject to apple_process_limit {j in PACKHOUSE, l in PERIOD}:
+  sum {i in APP_S} flow[i,j,'APP',l] - sum {m in APP_D} flow[m,j,'APP',l] = 0;
 
 
 # Avocado demand
