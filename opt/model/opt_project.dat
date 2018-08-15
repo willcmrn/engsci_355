@@ -7,6 +7,8 @@
 #
 # Created: 25/07/2018
 
+# --- Define sets ---
+
 set TYPE		:= AVO APP ;
 set AVO_S 		:= VS1 VS2 VS3 VS4 ;
 set AVO_D 		:= VD1 VD2 VD3 VD4 VD5 ;
@@ -16,7 +18,9 @@ set PACKHOUSE 	:= T1 T2 T3 T4 ;
 set SIZE 		:= S M L ;
 set PERIOD		:= 1 2 3 4 5 6 7 8 9 10 ;
 
+# --- Define number of periods ---
 
+param no_periods := 10;
 
 # --- Avocado S & D ---
 

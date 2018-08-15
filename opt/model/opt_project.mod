@@ -30,6 +30,8 @@ set DEMAND := AVO_D union APP_D;
 set ALL_NODES := AVO_NODES union APP_NODES;
 
 # --- Params ---
+# Define number of periods
+param no_periods;
 
 # Set supply params & costs for avocados
 param avo_supply {AVO_S};
@@ -70,7 +72,7 @@ var build {SIZE, PACKHOUSE, TYPE} integer >= 0;
 # The objective is to minimise the transportation cost
 
 minimize TotalCost:
-  sum{i in SIZE, j in PACKHOUSE, k in TYPE} packcost[i]*1000*build[i,j,k] +
+  sum{i in SIZE, j in PACKHOUSE, k in TYPE} packcost[i]*no_periods*1000*build[i,j,k] +
   sum{i in AVO_NODES,j in PACKHOUSE, k in TYPE, l in PERIOD} flow[i,j,k,l]*avo_costs[i,j] +
   sum{i in APP_NODES,j in PACKHOUSE, k in TYPE, l in PERIOD} flow[i,j,k,l]*app_costs[i,j];
 
