@@ -112,6 +112,8 @@ subject to apple_process_limit {j in PACKHOUSE, l in PERIOD}:
   sum {i in APP_S} flow[i,j,'APP',l] - sum {m in APP_D} flow[m,j,'APP',l] = 0;
 
 
+# Plant Capacities
+
 # Avocado demand
 subject to avocado_output {j in PACKHOUSE, l in PERIOD}:
 	sum {i in AVO_D} flow[i,j,'AVO',l] <= sum{z in SIZE} packrate[z]*build[z,j,'AVO'];
